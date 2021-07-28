@@ -1,0 +1,213 @@
+/*Global*/
+body {
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #D6D8FF !important;
+}
+
+/*Typography*/
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #3138B1;
+    margin-bottom: 24px;
+}
+h2 {
+    font-size: 24px;
+    color: #3138B1;
+    font-weight: 600;
+}
+h3 {
+    font-size: 14px;
+    color: #0C1E34;
+}
+p {
+    line-height: 24px;
+    margin-bottom: 24px;
+    font-size: 16px;
+    color: #0C1E34;
+}
+
+/*Top Navigation*/
+#navBar {
+    display: flex;
+    flex-direction: row;
+    margin: 64px 12% 0;
+}
+#logo {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+    width: 25%;
+}
+#navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 75%;
+}
+
+#navigation a{
+    text-decoration: none;
+    color: #3138B1;
+    margin-left: 26px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+#navigation a:hover {
+    color: #45DCEA;
+}
+
+.active {
+    color: #FF0BC2;
+    font-weight: 600;
+    position: relative;
+}
+.active::after {
+    content: '';
+    height: 4px;
+    text-align: center;
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+    background: #FF0BC2;
+    position: absolute;
+    margin-top: 14px;
+}
+
+/*.icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 5%;
+}*/
+
+/*Main content*/
+#aboutMe {
+    display: grid;
+    width: 76%;
+    min-height: 768px;
+    height: 70vh;
+    margin: 0px 12%;
+    grid-template-rows: 100%;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+        "column1Grid column2Grid";
+}
+.aboutMeArea {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+#column1Grid {
+    grid-area: column1Grid;
+    display: grid;
+    width: 75%;
+    margin-top: 96px;
+    grid-template-rows: 75% 25%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "photo photo photo"
+        "resumeHeader buttonDocx buttonPdf";
+}
+.column1Area {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+#photo {
+    grid-area: photo;
+    background-image: url("../images/about.jpg");
+    /*height: 340px;
+    width: 340px;*/
+    border-radius: 5%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: flex-start;
+}
+#resumeHeader {
+    grid-area: resumeHeader;
+    justify-content: flex-start;
+    margin-top: 48px;
+}
+#buttonDocx {
+    grid-area: buttonDocx;
+    justify-content: flex-end;
+    margin-right: 4px;
+    margin-top: 48px;
+}
+#buttonPdf {
+    grid-area: buttonPdf;
+    justify-content: flex-end;
+    margin-right: 4px;
+    margin-top: 48px;
+}
+button {
+    background-color: white;
+    border: 1px solid #FF0BC2;
+    width: 92px;
+    height: 32px;
+    border-radius: 32px;
+    box-shadow: 4px 4px #FF0BC2;
+    color: #FF0BC2;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+button:hover {
+    border: 1px solid #45DCEA;
+    box-shadow: 4px 4px #45DCEA;
+    color: #45DCEA;
+}
+
+#column2Grid {
+    grid-area: column2Grid;
+    display: grid;
+    width: 100%;
+    margin-top: 96px;
+    grid-template-rows: 43% 32% 25%;
+    grid-template-columns: 25% 75%;
+    grid-template-areas:
+        "aboutBlurb aboutBlurb"
+        "toolsHeader tools"
+        "skillsHeader skills";
+}
+#aboutBlurb {
+    grid-area: aboutBlurb;
+}
+#toolsHeader {
+    grid-area: toolsHeader;
+    margin-top: 48px;
+}
+#tools {
+    grid-area: tools;
+    margin-top: 48px;
+}
+#skillsHeader {
+    grid-area: skillsHeader;
+    margin-top: 48px;
+}
+#skills {
+    grid-area: skills;
+    margin-top: 48px;
+}
+li {
+    line-height: 26px;
+    font-size: 16px;
+    color: #0C1E34;
+}
+/*Footer*/
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 7px 12% 0;
+}
