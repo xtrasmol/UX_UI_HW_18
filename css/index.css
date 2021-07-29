@@ -24,7 +24,6 @@ h3 {
 }
 p {
     line-height: 24px;
-    margin-bottom: 24px;
     font-size: 16px;
     color: #0C1E34;
 }
@@ -86,9 +85,8 @@ p {
 /*Main content*/
 #aboutMe {
     display: grid;
-    width: 76%;
     min-height: 768px;
-    height: 70vh;
+    height: 80vh;
     margin: 0px 12%;
     grid-template-rows: 100%;
     grid-template-columns: 1fr 2fr;
@@ -112,11 +110,6 @@ p {
         "photo photo photo"
         "resumeHeader buttonDocx buttonPdf";
 }
-.column1Area {
-    display: flex;
-    align-items: flex-start;
-    position: relative;
-}
 #photo {
     grid-area: photo;
     background-image: url("../images/about.jpg");
@@ -135,13 +128,15 @@ p {
 }
 #buttonDocx {
     grid-area: buttonDocx;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    align-items: flex-end;
     margin-right: 4px;
     margin-top: 48px;
 }
 #buttonPdf {
     grid-area: buttonPdf;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    align-items: flex-end;
     margin-right: 4px;
     margin-top: 48px;
 }
@@ -165,6 +160,11 @@ button:hover {
     border: 1px solid #45DCEA;
     box-shadow: 4px 4px #45DCEA;
     color: #45DCEA;
+}
+.column1Area {
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 #column2Grid {
@@ -203,6 +203,11 @@ li {
     font-size: 16px;
     color: #0C1E34;
 }
+.column2Area {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
 /*Footer*/
 footer {
     display: flex;
@@ -210,4 +215,89 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin: 7px 12% 0;
+}
+
+/*Mobile*/
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+    #navBar {
+        margin: 0;
+        top: 0; 
+        width: 100%;
+        padding: 8px 20px;
+        overflow: hidden;
+        position: fixed;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    #logo {
+        width: 15%;
+    }
+    #navigation {
+        width: 85%;
+    }
+    #navigation a{
+        margin-left: 16px;
+    }
+    .active::after {
+        margin-top: 10px;
+    }
+
+    #aboutMe {
+        margin: 112px 0 0 0;
+        padding: 8px 20px;
+        min-height: 1584px;
+        grid-template-rows: 70% 30%;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "column2Grid"
+            "column1Grid";
+    }
+    .aboutMeArea {
+        flex-direction: column;
+    }
+    #column2Grid {
+        grid-area: column2Grid;
+        display: grid;
+        width: 100%;
+        margin: 0;
+        grid-template-rows: 60% 24% 16%;
+        grid-template-columns: 38% 31% 31%;
+        grid-template-areas:
+            "aboutBlurb aboutBlurb aboutBlurb"
+            "toolsHeader tools tools"
+            "skillsHeader skills skills";
+    }
+    #column1Grid {
+        grid-area: column1Grid;
+        display: grid;
+        width: 100%;
+        margin: 0;
+        grid-template-rows: 20% 80%;
+        grid-template-columns: 38% 31% 31%;
+        grid-template-areas:
+            "resumeHeader buttonDocx buttonPdf"
+            "photo photo photo";
+    }
+    #photo {
+        justify-content: center;
+    }  
+    #resumeHeader {
+        margin-top: 0px;
+    }
+    #buttonDocx {
+        margin-top: 0px;
+        align-items: flex-start;
+        margin-right: 0px;
+    }
+    #buttonPdf {
+        margin-top: 0px;
+        align-items: flex-start;
+        margin-right: 0px;
+    }
+    footer {
+        margin: 48px 20px 24px;
+    }
 }
