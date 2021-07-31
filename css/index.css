@@ -1,6 +1,6 @@
 /*Global*/
 body {
-    height: 100%;
+    width: 100vw;
     font-family: 'Montserrat', sans-serif;
     background-color: #D6D8FF !important;
 }
@@ -32,10 +32,11 @@ p {
 #navBar {
     display: flex;
     flex-direction: row;
-    margin: 64px 12% 0;
+    margin: 64px 12vw 0;
 }
 #logo {
     display: flex;
+    flex-grow: 1;
     align-items: baseline;
     justify-content: flex-start;
     width: 25%;
@@ -74,7 +75,6 @@ p {
     position: absolute;
     margin-top: 14px;
 }
-
 /*.icons {
     display: flex;
     align-items: center;
@@ -83,6 +83,269 @@ p {
 }*/
 
 /*Main content*/
+#aboutMe {
+    margin: 8vh 12vw 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+#photo {
+    width: 20vw;
+    height: 20vw;
+    background-image: url("../images/about.jpg");
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    margin-top: 48px;
+}
+#hello {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20vw;
+    text-align: center;
+    justify-content: center;
+}
+#blurb {
+    width: 50vw;
+    justify-content: flex-end;
+    margin-left: 6vw;
+}
+
+#lists {
+    width: 35vw;
+    margin-left: 6vw;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
+    grid-template-areas:
+        "toolsHeader toolsList"
+        "skillsHeader skillsList"
+        "resumeHeader resumeButtons";
+}
+#toolsHeader {
+    grid-area: toolsHeader;
+    margin-top: 48px;
+}
+#toolsList {
+    grid-area: toolsList;
+    margin-top: 48px;
+}
+#skillsHeader {
+    grid-area: skillsHeader;
+    margin-top: 48px;
+}
+#skillsList {
+    grid-area: skillsList;
+    margin-top: 48px;
+}
+#resumeHeader {
+    grid-area: resumeHeader;
+    margin-top: 48px;
+}
+#resumeButtons {
+    grid-area: resumeButtons;
+    margin-top: 48px;
+}
+
+li {
+    line-height: 26px;
+    font-size: 16px;
+    color: #0C1E34;
+}
+button {
+    background-color: white;
+    border: 1px solid #FF0BC2;
+    width: 92px;
+    height: 32px;
+    border-radius: 32px;
+    box-shadow: 4px 4px #FF0BC2;
+    color: #FF0BC2;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    margin-right: 26px;
+}
+button:hover {
+    border: 1px solid #45DCEA;
+    box-shadow: 4px 4px #45DCEA;
+    color: #45DCEA;
+}
+
+/*Footer*/
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 6vh 12vw 4vh;
+}
+
+/*Smaller desktop*/
+@media only screen and (max-width: 1440px) {
+    #lists {
+        width: 45vw;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    #lists {
+        width: 50vw;
+    }
+}
+
+/*Tablet*/
+@media only screen and (max-width: 1000px) {
+    #navBar {
+        margin: 64px 8vw 0;
+    }
+    #aboutMe {
+        margin: 8vh 8vw 0;
+    }
+    #hello {
+        width: 24vw;
+    }
+    #blurb {
+        width: 54vw;
+    }
+    #photo {
+        width: 24vw;
+        height: 24vw;
+    }
+    #lists {
+        width: 54vw;
+    }
+    footer {
+        margin: 6vh 8vw 4vh;
+    }
+}
+@media only screen and (max-width: 900px) {
+    #navBar {
+        margin: 64px 6vw 0;
+    }
+    #aboutMe {
+        margin: 6vh 6vw 0;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
+    #hello {
+        width: 88vw;
+    }
+    #blurb {
+        width: 52vw;
+        margin: 0;
+    }
+    #photo {
+        width: 30vw;
+        height: 30vw;
+        margin: 0;
+        margin-top: 48px;
+    }
+    #lists {
+        width: 88vw;
+        margin: 0;
+    }
+    footer {
+        margin: 6vh 6vw 4vh;
+    }
+}
+
+/*Mobile*/
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+    #navBar {
+        margin: 0;
+        top: 0; 
+        z-index: 100;
+        width: 100%;
+        overflow: hidden;
+        position: fixed;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    #logo {
+        width: auto;
+        padding: 8px 0 8px 5vw;
+    }
+    #navigation {
+        width: auto;
+        padding: 8px 5vw 8px 0;
+    }
+    #navigation a{
+        display: flex;
+        margin-left: 4vw;
+        justify-content: right;
+    }
+    .active::after {
+        margin-top: 10px;
+    }
+
+    #aboutMe {
+        margin: 12vh 5vw 0;
+        flex-direction: column;
+    }
+    #hello {
+        width: 90vw;
+    }
+    #blurb {
+        width: 90vw;
+        margin-top: 48px;
+    }
+    #photo {
+        left: 0; 
+        right: 0; 
+        margin-top: 24px;
+        margin-left: auto; 
+        margin-right: auto;
+        width: 50vw;
+        height: 50vw;
+    }
+    #lists {
+        width: 90vw;
+        grid-auto-columns: 30vw 60vw;
+    }
+    button {
+        margin-right: 18px;
+    }
+    .aboutMeArea :nth-child(1) { order: -2; }
+    .aboutMeArea :nth-child(3) { order: -1; }
+    
+    footer {
+        margin: 6vh 5vw 4vh;
+    }
+}
+@media only screen and (max-width: 375px) {
+    #navigation a{
+        margin-left: 3vw;
+    }
+    #lists {
+        width: 90vw;
+        grid-auto-columns: 40vw 50vw;
+    }
+    #resumeButtons {
+        height: 88px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+
+/*
+1) type out any letter of your font style of choice
+2) look at the height of that character. Then take that number and put it over your entire screen height
+3) take the num you got in a calculator app and move the decimal place to the right 2 times.
+4) update your font-size to this number with vh in place of where you’d put px or %
+5) watch your letters change size when you make the browser shorter!
+Ofc breakpoints are still necessary here so you don’t get a crowded page but it’s nice to see things be responsive like this
+/*
+
+/*
 #aboutMe {
     display: grid;
     min-height: 768px;
@@ -104,8 +367,8 @@ p {
     display: grid;
     width: 75%;
     margin-top: 96px;
-    grid-template-rows: 75% 25%;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 75% 25% auto;
+    grid-template-columns: repeat(3, 1fr) auto;
     grid-template-areas:
         "photo photo photo"
         "resumeHeader buttonDocx buttonPdf";
@@ -113,8 +376,6 @@ p {
 #photo {
     grid-area: photo;
     background-image: url("../images/about.jpg");
-    /*height: 340px;
-    width: 340px;*/
     border-radius: 5%;
     background-position: center;
     background-repeat: no-repeat;
@@ -172,8 +433,8 @@ button:hover {
     display: grid;
     width: 100%;
     margin-top: 96px;
-    grid-template-rows: 43% 32% 25%;
-    grid-template-columns: 25% 75%;
+    grid-template-rows: 43% 32% 25% auto;
+    grid-template-columns: 25% 75% auto;
     grid-template-areas:
         "aboutBlurb aboutBlurb"
         "toolsHeader tools"
@@ -208,96 +469,4 @@ li {
     flex-direction: column;
     position: relative;
 }
-/*Footer*/
-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 7px 12% 0;
-}
-
-/*Mobile*/
-@media only screen and (max-width: 600px) {
-    body {
-        width: 100%;
-    }
-    #navBar {
-        margin: 0;
-        top: 0; 
-        width: 100%;
-        padding: 8px 20px;
-        overflow: hidden;
-        position: fixed;
-        justify-content: space-between;
-        background-color: rgba(255, 255, 255, 0.9);
-    }
-    #logo {
-        width: 15%;
-    }
-    #navigation {
-        width: 85%;
-    }
-    #navigation a{
-        margin-left: 16px;
-    }
-    .active::after {
-        margin-top: 10px;
-    }
-
-    #aboutMe {
-        margin: 112px 0 0 0;
-        padding: 8px 20px;
-        min-height: 1584px;
-        grid-template-rows: 70% 30%;
-        grid-template-columns: 100%;
-        grid-template-areas:
-            "column2Grid"
-            "column1Grid";
-    }
-    .aboutMeArea {
-        flex-direction: column;
-    }
-    #column2Grid {
-        grid-area: column2Grid;
-        display: grid;
-        width: 100%;
-        margin: 0;
-        grid-template-rows: 60% 24% 16%;
-        grid-template-columns: 38% 31% 31%;
-        grid-template-areas:
-            "aboutBlurb aboutBlurb aboutBlurb"
-            "toolsHeader tools tools"
-            "skillsHeader skills skills";
-    }
-    #column1Grid {
-        grid-area: column1Grid;
-        display: grid;
-        width: 100%;
-        margin: 0;
-        grid-template-rows: 20% 80%;
-        grid-template-columns: 38% 31% 31%;
-        grid-template-areas:
-            "resumeHeader buttonDocx buttonPdf"
-            "photo photo photo";
-    }
-    #photo {
-        justify-content: center;
-    }  
-    #resumeHeader {
-        margin-top: 0px;
-    }
-    #buttonDocx {
-        margin-top: 0px;
-        align-items: flex-start;
-        margin-right: 0px;
-    }
-    #buttonPdf {
-        margin-top: 0px;
-        align-items: flex-start;
-        margin-right: 0px;
-    }
-    footer {
-        margin: 48px 20px 24px;
-    }
-}
+*/
